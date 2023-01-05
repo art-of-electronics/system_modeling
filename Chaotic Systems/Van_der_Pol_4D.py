@@ -62,4 +62,34 @@ plt4.set_title("$Y-Y'$ Plot")
 plt.tight_layout()
 plt.savefig("VanderPol4D_2.png", bbox_inches = 'tight', dpi = 200)
 
+fig3 = plt.figure()
+fig3.suptitle("Hyperchaotic Van der Pol\n$\\mu$=%.1f" % (mu))
+
+plt1 = plt.subplot2grid((2,2), (0,0))
+plt1.plot(out[:, 0], out[:, 3],'tab:green')
+plt1.set_xlabel('$X$', fontsize=fntsz)
+plt1.set_ylabel('$W$', fontsize=fntsz)
+plt1.set_title("X-W Plot")
+
+plt2 = plt.subplot2grid((2,2), (0,1))
+plt2.plot(out[:, 1], out[:, 3],'tab:orange')
+plt2.set_xlabel('$Y$', fontsize=fntsz)
+plt2.set_ylabel('$W$', fontsize=fntsz)
+plt2.set_title("Y-W Plot")
+
+plt3 = plt.subplot2grid((2,2), (1,0))
+plt3.plot(out[:, 3], out[:, 2],'tab:red')
+plt3.set_xlabel('$W$', fontsize=fntsz)
+plt3.set_ylabel('$Z$', fontsize=fntsz)
+plt3.set_title("W-Z Plot")
+
+plt4 = plt.subplot2grid((2,2), (1,1))
+plt4.plot(t, out[:, 3])
+plt4.set_xlabel('$t$')
+plt4.set_ylabel('$W$')
+plt4.set_title("W = f(t)")
+
+plt.tight_layout()
+plt.savefig("VanderPol4D_3.png", bbox_inches = 'tight', dpi = 200)
+
 plt.show()

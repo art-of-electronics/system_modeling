@@ -87,12 +87,10 @@ plt3.set_ylabel('$Z$', fontsize=fntsz)
 plt3.set_title("W-Z Plot")
 
 plt4 = plt.subplot2grid((2,2), (1,1))
-plt4.plot(out[:, 3], out[:, 3])
-#plt4.legend(['X','Y','Z','W'])
-plt4.set_xlabel('$W$')
+plt4.plot(t, out[:, 3])
+plt4.set_xlabel('$t$')
 plt4.set_ylabel('$W$')
-plt4.set_title("W-W Plot")
-
+plt4.set_title("W = f(t)")
 
 plt.tight_layout()
 plt.savefig("Chua4D_3.png", bbox_inches = 'tight', dpi = 200)
