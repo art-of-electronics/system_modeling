@@ -31,11 +31,11 @@ ax.set_zlabel('$Z$', fontsize=fntsz)
 ax.xaxis.set_tick_params(labelsize=fntsz)
 ax.yaxis.set_tick_params(labelsize=fntsz)
 ax.zaxis.set_tick_params(labelsize=fntsz)
-ax.set_title("Hyperhaotic Chua\n$\\alpha$=%d, $\\beta$=%d, $a$=%.2f, $c$=%.2f, $s$=%.2f" % (alpha, beta, a, c, s))
+ax.set_title("Hyperchaotic Chua\n$\\alpha$=%d, $\\beta$=%d, $a$=%.2f, $c$=%.2f, $s$=%.2f" % (alpha, beta, a, c, s))
 plt.savefig("Chua4D_1.png", bbox_inches = 'tight', dpi = 200)
 
 fig2 = plt.figure()
-fig2.suptitle("Hyperhaotic Chua\n$\\alpha$=%d, $\\beta$=%d, $a$=%.2f, $c$=%.2f, $s$=%.2f" % (alpha, beta, a, c, s))
+fig2.suptitle("Hyperchaotic Chua\n$\\alpha$=%d, $\\beta$=%d, $a$=%.2f, $c$=%.2f, $s$=%.2f" % (alpha, beta, a, c, s))
 
 plt1 = plt.subplot2grid((2,2), (0,0))
 plt1.plot(out[:, 0], out[:, 1],'tab:green')
@@ -64,4 +64,36 @@ plt4.set_title("X,Y,Z,W = f(t)")
 
 plt.tight_layout()
 plt.savefig("Chua4D_2.png", bbox_inches = 'tight', dpi = 200)
+
+fig3 = plt.figure()
+fig3.suptitle("Hyperchaotic Chua\n$\\alpha$=%d, $\\beta$=%d, $a$=%.2f, $c$=%.2f, $s$=%.2f" % (alpha, beta, a, c, s))
+
+plt1 = plt.subplot2grid((2,2), (0,0))
+plt1.plot(out[:, 0], out[:, 3],'tab:green')
+plt1.set_xlabel('$X$', fontsize=fntsz)
+plt1.set_ylabel('$W$', fontsize=fntsz)
+plt1.set_title("X-W Plot")
+
+plt2 = plt.subplot2grid((2,2), (0,1))
+plt2.plot(out[:, 1], out[:, 3],'tab:orange')
+plt2.set_xlabel('$Y$', fontsize=fntsz)
+plt2.set_ylabel('$W$', fontsize=fntsz)
+plt2.set_title("Y-W Plot")
+
+plt3 = plt.subplot2grid((2,2), (1,0))
+plt3.plot(out[:, 3], out[:, 2],'tab:red')
+plt3.set_xlabel('$W$', fontsize=fntsz)
+plt3.set_ylabel('$Z$', fontsize=fntsz)
+plt3.set_title("W-Z Plot")
+
+plt4 = plt.subplot2grid((2,2), (1,1))
+plt4.plot(out[:, 3], out[:, 3])
+#plt4.legend(['X','Y','Z','W'])
+plt4.set_xlabel('$W$')
+plt4.set_ylabel('$W$')
+plt4.set_title("W-W Plot")
+
+
+plt.tight_layout()
+plt.savefig("Chua4D_3.png", bbox_inches = 'tight', dpi = 200)
 plt.show()

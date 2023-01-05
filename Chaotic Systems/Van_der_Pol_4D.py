@@ -29,11 +29,11 @@ ax.set_zlabel('$P_{x}, P_{y}$', fontsize=fntsz)
 ax.xaxis.set_tick_params(labelsize=fntsz)
 ax.yaxis.set_tick_params(labelsize=fntsz)
 ax.zaxis.set_tick_params(labelsize=fntsz)
-ax.set_title("Hyperhaotic Van der Pol\n$\\mu$=%.1f" % (mu))
+ax.set_title("Hyperchaotic Van der Pol\n$\\mu$=%.1f" % (mu))
 plt.savefig("VanderPol4D_1.png", bbox_inches = 'tight', dpi = 200)
 
 fig2 = plt.figure()
-fig2.suptitle("Hyperhaotic Van der Pol\n$\\mu$=%.1f" % (mu))
+fig2.suptitle("Hyperchaotic Van der Pol\n$\\mu$=%.1f" % (mu))
 
 plt1 = plt.subplot2grid((2,2), (0,0))
 plt1.plot(out[:, 2], out[:, 0],'tab:green')
