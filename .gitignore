@@ -1,0 +1,15 @@
+# Temp folder
+Test/
+Temp/
+__pycache__/
+
+# Miscellaneous system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# PyCharm
+.idea/
+
+# Matlab
+.asv
