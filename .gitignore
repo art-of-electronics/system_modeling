@@ -9,7 +9,7 @@ Thumbs.db
 desktop.ini
 
 # PyCharm
-.idea/
+**/.idea/
 
 # Matlab
-.asv
+**/*.asv
