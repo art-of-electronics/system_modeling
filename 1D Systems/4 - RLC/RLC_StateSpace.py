@@ -5,7 +5,7 @@ from random import random
 
 
 # Parameters
-R = 2.2 # [1, 2.2, 3.3]
+R = 2.2  # [1, 2.2, 3.3]
 L = round((random() * 10), 1) * 1e-3
 C = round((random() * 10), 1) * 1e-6
 U = 3.3
