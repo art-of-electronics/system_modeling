@@ -1,6 +1,6 @@
 # Temp folder
-Test/
-Temp/
+**/Test/
+**/Temp/
 __pycache__/
 
 # Miscellaneous system files
