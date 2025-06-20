@@ -18,7 +18,7 @@ in Python and Matlab / Simulink form.
 - [ ] BLDC motor;
 - [ ] Fluid flow;
 - [ ] Simple thermal;
-- [ ] Pendulum;
+- [x] Pendulum;
 - [ ] Parachute jump;
 
 Have fun :)
