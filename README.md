@@ -3,7 +3,7 @@
 My goal is to gather all possible chaotic systems 
 and simulate their behaviour.
 
-Chaotic systems count: **21 + 1**
+Chaotic systems count: **23 + 1**
 
 Currently, I'm recreating and uploading 
 1D mechanical / electrical systems 
