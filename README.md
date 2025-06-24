@@ -19,7 +19,7 @@ in Python and Matlab / Simulink form.
 - [ ] Fluid flow;
 - [ ] Simple thermal;
 - [x] Pendulum;
-- [ ] Parachute jump;
+- [x] Parachute jump;
 
 Have fun :)
 
