@@ -6,7 +6,6 @@ global in
 %% ===== Graph parameters =====
 graph.lt = 2; graph.fntsz = 12; graph.fnt = 'Consolas';
 
-
 %% ===== Model parameters =====
 in.m = 25;
 in.B = 5;
@@ -20,10 +19,10 @@ in.c = 0.2;
 %% ===== Simulation parameters =====
 param.tmax = [0 70];
 param.ic = [0 0];
+param.options = odeset('RelTol', 1e-4, 'AbsTol', 1e-4);
 
 %% ===== Simulation =====
-param.options = odeset('RelTol', 1e-4, 'AbsTol', 1e-4);
-[T,X] = ode45(@SingleDoF_Script, param.tmax, param.ic, param.options);
+[T, X] = ode45(@SingleDoF_Script, param.tmax, param.ic, param.options);
 
 %% ===== Calculations =====
 out.time = T(:, 1);

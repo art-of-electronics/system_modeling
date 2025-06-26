@@ -1,6 +1,9 @@
 clc; clear; close all;
 
 %% ===== Graph parameters =====
+global in;
+
+%% ===== Graph parameters =====
 graph.lt = 2; graph.fntsz = 15; graph.fnt = 'Arial Bold';
 
 %% ===== Model parameters =====
@@ -13,25 +16,22 @@ in.k(2) = 8.4;
 in.F = 20;
 
 %% ===== Simulation parameters =====
-param.tmax = 35;
-param.step = 0.001;
+param.tmax = [0 35];
 param.ic = [0 0 0 0];
-param.options = simset('MaxStep', param.step);
+param.options = odeset('RelTol', 1e-6, 'AbsTol', 1e-6);
 
 %% ===== Simulation =====
-load_system('Model_2DoF_m1_14b');
-open_system('Model_2DoF_m1_14b');
-sim('Model_2DoF_m1_14b', param.tmax, param.options);
+[T, Y] = ode45(@DualDoF_m1_Script, param.tmax, param.ic, param.options);
 
 %% ===== Calculations =====
-out.time = simout.Time;
-out.y(:, 1) = simout.Data(:, 3);
-out.y(:, 2) = simout.Data(:, 6);
-out.v(:, 1) = simout.Data(:, 2);
-out.v(:, 2) = simout.Data(:, 5);
-out.a(:, 1) = simout.Data(:, 1);
-out.a(:, 2) = simout.Data(:, 4);
-clearvars simout tout;
+out.time = T;
+out.y(:, 1) = Y(:, 1);
+out.y(:, 2) = Y(:, 3);
+out.v(:, 1) = Y(:, 2);
+out.v(:, 2) = Y(:, 4);
+out.a(:, 1) = [diff(Y(:, 2)); 0];
+out.a(:, 2) = [diff(Y(:, 4)); 0];
+clearvars T Y;
 
 out.Z0 = zeros(size(out.time, 1), 1);
 
@@ -40,9 +40,9 @@ graph.legend{2}=sprintf('m_{2}=%.1f, B_{2}=%.1f, k_{2}=%.1f', in.m(2), in.B(2), 
 
 %% ===== Plot =====
 figure(1)
-subplot(2,1,1);
+subplot(2, 1, 1);
 plot(out.time, out.y, out.time, out.Z0, 'k', 'LineWidth', graph.lt);
-set(gca, 'FontSize',graph.fntsz, 'FontName',graph.fnt);
+set(gca, 'FontSize', graph.fntsz, 'FontName', graph.fnt);
 xlabel('Simulation time [s]');
 ylabel('Mass displacement [m]');
 title('Plot y=f(t)');
@@ -70,7 +70,7 @@ ylabel('$$\frac{dy}{dt}$$', 'Interpreter', 'latex');
 title('Phase portrait v=f(y) of sub system 1');
 subplot(2, 2, 3);
 plot(out.v(:, 2), out.a(:, 2), 'LineWidth', graph.lt); 
-set(gca, 'FontSize',graph.fntsz, 'FontName',graph.fnt);
+set(gca, 'FontSize', graph.fntsz, 'FontName', graph.fnt);
 xlabel('$$\frac{dy}{dt}$$','Interpreter','latex');
 ylabel('$$\frac{d^{2}y}{dt^{2}}$$', 'Interpreter', 'latex');
 title('Phase portrait a=f(v) of subsystem 2');
