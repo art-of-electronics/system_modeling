@@ -16,7 +16,7 @@ in.h0 = in.H - in.h0;
 in.k = in.c .* in.A;
 
 %% ===== Simulation parameters =====
-param.tmax = 1000;   % Time
+param.tmax = 1000;  % Time
 param.step = 0.01;  % Simulation step
 param.ic = [0 0];   % Initial conditions
 param.options = simset('MaxStep', param.step);

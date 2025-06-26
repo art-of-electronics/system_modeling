@@ -1,4 +1,4 @@
-function [Dphi] = Pendulum_Script(~,phi)
+function [Dphi] = Pendulum_Script(~, phi)
 
 global in
 

@@ -1,9 +1,12 @@
-function [Du] = RLC_Script(t,u)
+function [Du] = RLC_Script(t, u)
 
-    global in;
-    global freq;
+global in;
+global freq;
 
-    k = (freq.fmax - freq.fmin)/freq.tmax;                  % Delta f step
-    Uw = cos((2*pi()*(k/2).*t.*t) + (2*pi()*freq.fmin.*t)); % Chirp signal
-    Du = [u(2); (in.ku*Uw-in.R*in.C*u(2)-u(1))/(in.L*in.C)];% RLC model
+% Delta f step
+k = (freq.fmax - freq.fmin) / freq.tmax;                  
+% Chirp signal
+Uw = cos((2 * pi() * (k / 2) .* t .* t) + (2 * pi() * freq.fmin .* t));
+% RLC model
+Du = [u(2); (in.ku * Uw - in.R * in.C * u(2) - u(1)) / (in.L * in.C)];
 end

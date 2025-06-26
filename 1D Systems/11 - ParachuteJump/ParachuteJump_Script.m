@@ -1,4 +1,4 @@
-function [Dy] = ParachuteJump_Script(~,y)
+function [Dy] = ParachuteJump_Script(~, y)
 
 global in;
 

@@ -1,9 +1,9 @@
-function [Dx] = SingleDoF_Script(t,x)
+function [Dx] = SingleDoF_Script(t, x)
 
 global in
 g = 9.81;
 
-if (t>1)
+if (t > 1)
     step = in.F;
 else
     step = 0;
