@@ -1,4 +1,5 @@
 clc; clear; close all;
+
 %% ===== Graph parameters =====
 graph.lt = 2; graph.fntsz = 15; graph.fnt = 'Arial Bold';
 
@@ -48,7 +49,7 @@ title('Plot y=f(t)');
 legend(graph.legend);
 subplot(2, 1, 2);
 plot(out.time, out.a, out.time, out.Z0, 'k', 'LineWidth', graph.lt);
-set(gca, 'FontSize',graph.fntsz, 'FontName',graph.fnt);
+set(gca, 'FontSize', graph.fntsz, 'FontName', graph.fnt);
 xlabel('Simulation time [s]');
 ylabel('Mass acceleration [m/s^{2}]');
 title('Plot a=f(t)');

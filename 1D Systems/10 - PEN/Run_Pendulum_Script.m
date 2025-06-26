@@ -27,7 +27,7 @@ param.simtime = zeros(size(in.Bfactor, 2), 1);
 for n = 1 : size(in.Bfactor, 2)
     in.B = in.Bfactor(n);
     tic;
-    [T{n},PHI{n}] = ode45(@Pendulum_Script, param.tmax, param.ic, param.options);
+    [T{n}, PHI{n}] = ode45(@Pendulum_Script, param.tmax, param.ic, param.options);
     param.simtime(n) = toc;
     fprintf('Loop %d time of performing calculations: %.3fs\n', n, param.simtime(n));
 end;
@@ -36,7 +36,6 @@ clearvars n;
 %% ===== Calculations =====
 for n = 1 : size(in.Bfactor, 2)
     out.time{n} = T{n}(:, 1);
-    %out.angle{n} = (PHI{n}(:, 1) * 180 / pi());
     out.angle{n} = PHI{n}(:, 1);
     out.speed{n} = PHI{n}(:, 2);
     out.accel{n} = diff(PHI{n}(:, 2));

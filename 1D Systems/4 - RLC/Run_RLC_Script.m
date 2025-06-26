@@ -1,4 +1,5 @@
 clc; clear; close all;
+
 %% ===== Global parameters =====
 global in;
 global freq;
@@ -45,7 +46,7 @@ for i = 1 : size(RLC.R, 2)
 
     graph.legend{1}{i} = sprintf('U=%.1fU_{in} @ R=%.1f\\Omega', RLC.Q(i), RLC.R(i));
     graph.legend{2}{i} = sprintf('\\Deltaf=%.1fHz @ R=%.1f\\Omega', RLC.band_dB(i), RLC.R(i));
-    graph.legend{3}{i} = sprintf('i_{max}=%.2fA @ R=%.1f\\Omega; \\zeta=%.2f', max(U.I{i}(:,1)), RLC.R(i), RLC.zeta(i));
+    graph.legend{3}{i} = sprintf('i_{max}=%.2fA @ R=%.1f\\Omega; \\zeta=%.2f', max(U.I{i}(:, 1)), RLC.R(i), RLC.zeta(i));
 end;
 clearvars i;
 graph.legend{2}{size(RLC.R, 2) + 1} = '-3dB';
@@ -55,7 +56,7 @@ U.point3dB{1} = ones(size(F{1}, 1) ,1) .* (-3);
 figure(1)
 hold on
 for i = 1 : size(RLC.R, 2)
-    plot(F{i} ,U.U{i}(:, 1), 'LineWidth', graph.lt);
+    plot(F{i}, U.U{i}(:, 1), 'LineWidth', graph.lt);
 end;
 clearvars i;
 set(gca, 'FontSize', graph.fntsz, 'FontName', graph.fnt);

@@ -40,9 +40,9 @@ graph.legend{2}=sprintf('m_{2}=%.1f, B_{2}=%.1f, k_{2}=%.1f', in.m(2), in.B(2), 
 
 %% ===== Plot =====
 figure(1)
-subplot(2,1,1);
+subplot(2, 1, 1);
 plot(out.time, out.y, out.time, out.Z0, 'k', 'LineWidth', graph.lt);
-set(gca, 'FontSize',graph.fntsz, 'FontName',graph.fnt);
+set(gca, 'FontSize', graph.fntsz, 'FontName', graph.fnt);
 xlabel('Simulation time [s]');
 ylabel('Mass displacement [m]');
 title('Plot y=f(t)');
@@ -70,7 +70,7 @@ ylabel('$$\frac{dy}{dt}$$', 'Interpreter', 'latex');
 title('Phase portrait v=f(y) of sub system 1');
 subplot(2, 2, 3);
 plot(out.v(:, 2), out.a(:, 2), 'LineWidth', graph.lt); 
-set(gca, 'FontSize',graph.fntsz, 'FontName',graph.fnt);
+set(gca, 'FontSize', graph.fntsz, 'FontName', graph.fnt);
 xlabel('$$\frac{dy}{dt}$$','Interpreter','latex');
 ylabel('$$\frac{d^{2}y}{dt^{2}}$$', 'Interpreter', 'latex');
 title('Phase portrait a=f(v) of subsystem 2');
