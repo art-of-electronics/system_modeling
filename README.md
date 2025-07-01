@@ -16,7 +16,7 @@ in Python and Matlab / Simulink form.
 - [ ] Electromagnetic relay;
 - [ ] DC motor;
 - [ ] BLDC motor;
-- [ ] Fluid flow;
+- [x] Fluid flow;
 - [x] Simple thermal;
 - [x] Pendulum;
 - [x] Parachute jump;
