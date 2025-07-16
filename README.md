@@ -14,7 +14,7 @@ in Python and Matlab / Simulink form.
 - [x] 2DoF;
 - [x] RLC circuit;
 - [ ] Electromagnetic relay;
-- [ ] DC motor;
+- [x] DC motor;
 - [ ] BLDC motor;
 - [x] Fluid flow;
 - [x] Simple thermal;
